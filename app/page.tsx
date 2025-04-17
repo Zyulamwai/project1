@@ -68,8 +68,18 @@ export default function Home() {
               25 years of excellence in custom manufacturing for global brands
             </p>
             <div className="flex space-x-4">
-              <Button size="lg">Get Started</Button>
-              <Button size="lg" variant="outline">
+              <Button 
+                size="lg" 
+                variant="default"
+                className="hover:bg-white hover:text-black bg-black text-white transition-colors border-0"
+              >
+                Get Started
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="hover:bg-white hover:text-black bg-black text-white transition-colors border-0"
+              >
                 View Our Work
               </Button>
             </div>

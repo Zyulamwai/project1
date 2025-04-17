@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Factory, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -22,7 +23,6 @@ const footerLinks = {
     { name: "Contact Us", href: "/contact" },
     { name: "FAQ", href: "/faq" },
     { name: "RFQ", href: "/contact#quote" },
-    { name: "Technical Support", href: "/contact#support" },
   ],
 };
 
@@ -33,7 +33,13 @@ export function SiteFooter() {
         <div className="grid gap-8 lg:grid-cols-4">
           <div>
             <div className="flex items-center space-x-2">
-              <Factory className="h-6 w-6" />
+                  <Image
+                    src="/hongqinglogo.svg"
+                    alt="Hongqing Logo"
+                    width={24}
+                    height={24}
+                    className="h-6 w-6"
+                  />
               <span className="font-bold">Hongqing Plastic & Tooling</span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -100,12 +106,8 @@ export function SiteFooter() {
       <div className="container py-6">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Hongqing Plastic & Tooling. All rights reserved.
+            © 2025 Hongqing Plastic & Tooling. All rights reserved.
           </p>
-          <Button variant="outline" size="sm">
-            <Phone className="mr-2 h-4 w-4" />
-            Request a Quote
-          </Button>
         </div>
       </div>
     </footer>

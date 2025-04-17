@@ -41,6 +41,7 @@ const projectTypes = [
   "Custom Tooling",
   "Assembly Services",
   "Surface Treatment",
+  "Product Design",
   "Other",
 ];
 
