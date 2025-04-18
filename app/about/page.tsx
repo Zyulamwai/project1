@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
@@ -124,30 +125,32 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative">
-            <div className="absolute left-1/2 h-full w-0.5 -translate-x-1/2 bg-border" />
+            <div className="absolute left-4 h-full w-0.5 bg-border md:left-1/2 md:-translate-x-1/2" />
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
-                <div
-                  key={milestone.year}
-                  className={`relative flex ${
-                    index % 2 === 0 ? "justify-start" : "justify-end"
-                  }`}
-                >
-                  <div className="w-1/2 px-8">
-                    <Card>
-                      <CardContent className="p-6">
-                        <div className="mb-4 flex items-center space-x-2">
-                          <Timer className="h-5 w-5 text-primary" />
-                          <span className="font-semibold">{milestone.year}</span>
-                        </div>
-                        <h3 className="mb-2 text-lg font-semibold">
-                          {milestone.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {milestone.description}
-                        </p>
-                      </CardContent>
-                    </Card>
+                <div key={milestone.year} className="relative flex flex-col md:flex-row">
+                  <div className={cn(
+                    "flex w-full md:w-1/2",
+                    index % 2 === 0 ? "md:justify-end" : "md:justify-start md:order-2"
+                  )}>
+                    <div className="relative ml-12 w-full pl-0 pr-4 md:mx-4 md:w-auto md:min-w-[300px] md:max-w-[400px]">
+                      <div className="absolute -left-12 top-3 flex h-6 w-6 items-center justify-center rounded-full border bg-background md:-left-[52px]">
+                        <Timer className="h-4 w-4 text-primary" />
+                      </div>
+                      <Card>
+                        <CardContent className="p-4">
+                          <div className="mb-2 flex items-center space-x-2">
+                            <span className="font-semibold">{milestone.year}</span>
+                          </div>
+                          <h3 className="mb-1 text-base font-semibold">
+                            {milestone.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {milestone.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
                   </div>
                 </div>
               ))}
